@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cadastros | Leonardo Martins</title>
+
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body>
+
+    <main class="consulta-container">
+
+        <section class="consulta-card">
+
+            <div class="consulta-topo">
+                <div>
+                    <h1>Cadastros Recebidos</h1>
+                    <p>
+                        Registros armazenados no banco de dados SQLite.
+                    </p>
+                </div>
+
+                <a href="index.html">Voltar ao início</a>
+            </div>
+
+            <div id="status-consulta">
+                Carregando cadastros...
+            </div>
+
+            <div class="tabela-container">
+
+                <table id="tabela-contatos">
+
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>E-mail</th>
+                            <th>Telefone</th>
+                            <th>Assunto</th>
+                            <th>Mensagem</th>
+                            <th>Data</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="lista-contatos">
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="contatos.js"></script>
+
+</body>
+
+</html>
