@@ -2,3 +2,10 @@ backend/node_modules/
 .env
 .DS_Store
 Thumbs.db
+backend/portfolio-backup.db
+backend/portfolio-pre-publicacao.db
+# Banco de dados local
+backend/portfolio.db
+backend/portfolio.db-journal
+backend/portfolio.db-wal
+backend/portfolio.db-shm
