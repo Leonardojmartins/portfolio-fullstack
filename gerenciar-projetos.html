@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Gerenciar Projetos | Leonardo Martins</title>
+
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body>
+
+    <main class="gerenciamento-container">
+
+        <section class="gerenciamento-card">
+
+            <header class="gerenciamento-topo">
+                <div>
+                    <h1>Gerenciamento de Projetos</h1>
+                    <p>
+                        Cadastre, consulte, edite e exclua
+                        seus projetos.
+                    </p>
+                </div>
+
+                <a href="index.html" class="voltar-inicio">
+                    Voltar ao início
+                </a>
+            </header>
+
+            <!-- FORMULÁRIO DE PROJETOS -->
+
+            <section class="projeto-formulario">
+
+                <h2 id="titulo-formulario">
+                    Cadastrar novo projeto
+                </h2>
+
+                <form id="form-projeto">
+
+                    <input type="hidden" id="projeto-id">
+
+                    <div class="campo">
+                        <label for="nome-projeto">
+                            Nome do projeto *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nome-projeto"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="descricao-projeto">
+                            Descrição *
+                        </label>
+
+                        <textarea
+                            id="descricao-projeto"
+                            rows="4"
+                            required
+                        ></textarea>
+                    </div>
+
+                    <div class="campo">
+                        <label for="tecnologias-projeto">
+                            Tecnologias utilizadas
+                        </label>
+
+                        <input
+                            type="text"
+                            id="tecnologias-projeto"
+                            placeholder="HTML, CSS, JavaScript..."
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="link-projeto">
+                            Link do projeto
+                        </label>
+
+                        <input
+                            type="url"
+                            id="link-projeto"
+                            placeholder="https://..."
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="link-github">
+                            Link do GitHub
+                        </label>
+
+                        <input
+                            type="url"
+                            id="link-github"
+                            placeholder="https://github.com/..."
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="status-projeto">
+                            Status
+                        </label>
+
+                        <select id="status-projeto">
+                            <option value="Em desenvolvimento">
+                                Em desenvolvimento
+                            </option>
+
+                            <option value="Concluído">
+                                Concluído
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="acoes-formulario">
+
+                        <button type="submit" id="btn-salvar">
+                            Cadastrar projeto
+                        </button>
+
+                        <button
+                            type="button"
+                            id="btn-cancelar"
+                            hidden
+                        >
+                            Cancelar edição
+                        </button>
+
+                    </div>
+
+                    <p id="mensagem-projeto"
+                       role="status"
+                       aria-live="polite"></p>
+
+                </form>
+
+            </section>
+
+            <!-- LISTAGEM DE PROJETOS -->
+
+            <section class="projetos-cadastrados">
+
+                <h2>Projetos cadastrados</h2>
+
+                <p id="status-listagem"
+                   role="status"
+                   aria-live="polite">
+                    Aguardando carregamento...
+                </p>
+
+                <div id="lista-projetos"
+                     class="lista-projetos">
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+    <script src="gerenciar-projetos.js"></script>
+
+</body>
+</html>

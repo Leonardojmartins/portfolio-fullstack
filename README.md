@@ -145,3 +145,56 @@ O objetivo deste projeto é demonstrar conhecimentos básicos de desenvolvimento
 ## Autor
 
 Leonardo Martins
+
+
+
+---
+
+## Segunda funcionalidade — Gerenciamento de Projetos
+
+Foi implementado um módulo de gerenciamento de projetos, integrado ao portfólio existente.
+
+### Tecnologias
+
+- Frontend: HTML5, CSS3 e JavaScript
+- Backend: Node.js e Express
+- Banco de dados: SQLite
+
+### Funcionalidades
+
+- Cadastrar novos projetos
+- Consultar projetos cadastrados
+- Editar informações e status dos projetos
+- Cancelar uma edição
+- Excluir projetos mediante confirmação
+- Persistir os dados no SQLite
+
+### Operações CRUD
+
+| Operação | Método HTTP | Endpoint | SQL |
+|---|---|---|---|
+| Cadastrar | POST | /projetos | INSERT |
+| Consultar | GET | /projetos | SELECT |
+| Atualizar | PUT | /projetos/:id | UPDATE |
+| Excluir | DELETE | /projetos/:id | DELETE |
+
+### Como executar
+
+1. Abra o projeto no VS Code.
+2. Entre na pasta backend.
+3. Instale as dependências com `npm install`, se necessário.
+4. Inicie o servidor com `node server.js`.
+5. Abra `index.html` utilizando o Live Server.
+6. Clique em **Gerenciar Projetos** no menu principal.
+
+O backend utiliza a porta 3000 e o Live Server normalmente utiliza a porta 5500.
+
+### Persistência
+
+Os projetos são armazenados na tabela `projetos` do banco SQLite `backend/portfolio.db`.
+
+As operações são executadas por meio de uma API REST desenvolvida com Express.
+
+### Observação de segurança
+
+O módulo foi desenvolvido para demonstração acadêmica em ambiente local. As operações administrativas não possuem autenticação e não devem ser disponibilizadas publicamente sem controle de acesso.
