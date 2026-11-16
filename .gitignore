@@ -9,3 +9,11 @@ backend/portfolio.db
 backend/portfolio.db-journal
 backend/portfolio.db-wal
 backend/portfolio.db-shm
+# Bancos de dados SQLite locais
+backend/*.db
+backend/*.db-journal
+backend/*.db-wal
+backend/*.db-shm
+
+# Backups locais
+*.bak
