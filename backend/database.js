@@ -1,4 +1,4 @@
-const sqlite3 = require("sqlite3").verbose();
+﻿const sqlite3 = require("sqlite3").verbose();
 const path = require("path");
 
 // Caminho absoluto do banco de dados
@@ -54,6 +54,28 @@ db.serialize(() => {
         }
     });
 
+    // Terceira funcionalidade: gerenciamento de tarefas
+    db.run(`
+        CREATE TABLE IF NOT EXISTS tarefas (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            projeto_id INTEGER NOT NULL,
+            titulo TEXT NOT NULL,
+            descricao TEXT,
+            prazo TEXT,
+            status TEXT NOT NULL DEFAULT 'Pendente'
+                CHECK (status IN ('Pendente', 'Em andamento', 'Concluída')),
+            criado_em DATETIME DEFAULT CURRENT_TIMESTAMP,
+            FOREIGN KEY (projeto_id)
+                REFERENCES projetos(id)
+                ON DELETE RESTRICT
+        )
+    `, (erro) => {
+        if (erro) {
+            console.error("Erro na tabela tarefas:", erro.message);
+        } else {
+            console.log("Tabela tarefas verificada com sucesso!");
+        }
+    });
 });
 
 module.exports = db;

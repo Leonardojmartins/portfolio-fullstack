@@ -906,3 +906,157 @@ header nav a.menu-gerenciar {
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 8px;
 }
+
+/* ==========================================
+   3ª FUNCIONALIDADE - GERENCIAMENTO DE TAREFAS
+========================================== */
+
+/* Campos do formulário de tarefas */
+
+#form-tarefa .campo input,
+#form-tarefa .campo select,
+#form-tarefa .campo textarea {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1.2rem 1.4rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 9px;
+    background-color: #fff;
+    color: #1f2937;
+    font-family: inherit;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Destaque ao selecionar um campo */
+
+#form-tarefa .campo input:focus,
+#form-tarefa .campo select:focus,
+#form-tarefa .campo textarea:focus {
+    outline: none;
+    border-color: #4169e1;
+    box-shadow: 0 0 0 3px rgba(65, 105, 225, 0.15);
+}
+
+/* Área de descrição */
+
+#form-tarefa .campo textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+/* Seleção de projeto e status */
+
+#form-tarefa .campo select {
+    cursor: pointer;
+    min-height: 46px;
+}
+
+/* Mensagens de confirmação */
+
+#mensagem-tarefa {
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
+    line-height: 1.5;
+}
+
+/* Cartões das tarefas */
+
+#lista-tarefas .projeto-item {
+    background-color: #f8f9ff;
+    border: 1px solid #dce2ff;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+    overflow-wrap: anywhere;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#lista-tarefas .projeto-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* Título da tarefa */
+
+#lista-tarefas .projeto-item h3 {
+    color: #4169e1;
+    font-size: 2rem;
+    line-height: 1.4;
+    margin-bottom: 1.2rem;
+}
+
+/* Informações da tarefa */
+
+#lista-tarefas .projeto-item p {
+    color: #374151;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    margin-bottom: 0.8rem;
+}
+
+/* Área dos botões */
+
+#lista-tarefas .acoes-projeto {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+/* Estilo compartilhado dos botões */
+
+#lista-tarefas .acoes-projeto button {
+    padding: 1rem 1.8rem;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-family: inherit;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.2s, background-color 0.2s;
+}
+
+/* Botão Editar */
+
+#lista-tarefas .acoes-projeto button:first-child {
+    background: linear-gradient(to right, #9400d3, #4169e1);
+}
+
+/* Botão Excluir */
+
+#lista-tarefas .acoes-projeto button:last-child {
+    background-color: #dc2626;
+}
+
+/* Efeitos dos botões */
+
+#lista-tarefas .acoes-projeto button:hover {
+    opacity: 0.9;
+}
+
+#lista-tarefas .acoes-projeto button:focus-visible {
+    outline: 3px solid #4169e1;
+    outline-offset: 3px;
+}
+
+/* Ajustes para celulares */
+
+@media (max-width: 600px) {
+    #lista-tarefas .projeto-item {
+        padding: 1.5rem;
+    }
+
+    #lista-tarefas .acoes-projeto {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #lista-tarefas .acoes-projeto button {
+        width: 100%;
+    }
+}
