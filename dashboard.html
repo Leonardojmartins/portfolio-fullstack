@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | Leonardo Martins</title>
+
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body>
+    <main class="gerenciamento-container">
+        <section class="gerenciamento-card">
+
+            <header class="gerenciamento-topo">
+                <div>
+                    <h1>Dashboard de Indicadores</h1>
+                    <p>
+                        Acompanhe os projetos e tarefas
+                        cadastrados no sistema.
+                    </p>
+                </div>
+
+                <a href="index.html" class="voltar-inicio">
+                    Voltar ao início
+                </a>
+            </header>
+
+            <section class="dashboard-resumo"
+                     aria-label="Indicadores gerais">
+
+                <h2>Visão geral</h2>
+
+                <div class="dashboard-cards">
+
+                    <article class="dashboard-card">
+                        <h3>Total de projetos</h3>
+                        <p id="total-projetos">—</p>
+                    </article>
+
+                    <article class="dashboard-card">
+                        <h3>Projetos em desenvolvimento</h3>
+                        <p id="projetos-desenvolvimento">—</p>
+                    </article>
+
+                    <article class="dashboard-card">
+                        <h3>Projetos concluídos</h3>
+                        <p id="projetos-concluidos">—</p>
+                    </article>
+
+                    <article class="dashboard-card">
+                        <h3>Total de tarefas</h3>
+                        <p id="total-tarefas">—</p>
+                    </article>
+
+                    <article class="dashboard-card">
+                        <h3>Tarefas pendentes</h3>
+                        <p id="tarefas-pendentes">—</p>
+                    </article>
+
+                    <article class="dashboard-card">
+                        <h3>Tarefas em andamento</h3>
+                        <p id="tarefas-andamento">—</p>
+                    </article>
+
+                    <article class="dashboard-card">
+                        <h3>Tarefas concluídas</h3>
+                        <p id="tarefas-concluidas">—</p>
+                    </article>
+
+                </div>
+            </section>
+
+            <section class="dashboard-graficos">
+                <h2>Distribuição das tarefas</h2>
+
+                <div id="grafico-tarefas"
+                     aria-label="Gráfico de tarefas por status">
+                </div>
+            </section>
+
+            <p id="mensagem-dashboard"
+               role="status"
+               aria-live="polite">
+                Aguardando carregamento...
+            </p>
+
+        </section>
+    </main>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
