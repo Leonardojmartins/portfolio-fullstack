@@ -1060,3 +1060,147 @@ header nav a.menu-gerenciar {
         width: 100%;
     }
 }
+
+
+/* ==========================================
+   4ª FUNCIONALIDADE - DASHBOARD DE INDICADORES
+========================================== */
+
+.dashboard-resumo,
+.dashboard-graficos {
+    background-color: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 2.5rem;
+    margin-top: 2rem;
+}
+
+.dashboard-resumo h2,
+.dashboard-graficos h2 {
+    color: #333;
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+}
+
+/* Organização dos indicadores */
+
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(100%, 220px), 1fr)
+    );
+    gap: 1.8rem;
+}
+
+/* Cartões individuais */
+
+.dashboard-card {
+    background: linear-gradient(135deg, #f8f9ff, #eef2ff);
+    border: 1px solid #dce2ff;
+    border-radius: 12px;
+    padding: 2.2rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 18px rgba(65, 105, 225, 0.12);
+}
+
+.dashboard-card h3 {
+    color: #475569;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.5;
+    margin-bottom: 1.2rem;
+}
+
+.dashboard-card p {
+    color: #4169e1;
+    font-size: 3.6rem;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+/* Gráfico de distribuição */
+
+#dashboard-grafico,
+#grafico-tarefas {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+}
+
+.dashboard-grafico-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.dashboard-grafico-cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    color: #374151;
+    font-size: 1.5rem;
+}
+
+.dashboard-grafico-trilho {
+    width: 100%;
+    height: 18px;
+    background-color: #e5e7eb;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.dashboard-grafico-barra {
+    height: 100%;
+    border-radius: 999px;
+    transition: width 0.4s ease;
+}
+
+.barra-pendente {
+    background-color: #f59e0b;
+}
+
+.barra-andamento {
+    background: linear-gradient(to right, #9400d3, #4169e1);
+}
+
+.barra-concluida {
+    background-color: #16a34a;
+}
+
+/* Mensagem de atualização */
+
+#mensagem-dashboard {
+    margin-top: 2rem;
+    color: #475569;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+/* Responsividade */
+
+@media (max-width: 600px) {
+    .dashboard-resumo,
+    .dashboard-graficos {
+        padding: 1.5rem;
+    }
+
+    .dashboard-cards {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    .dashboard-card {
+        padding: 1.8rem;
+    }
+
+    .dashboard-card p {
+        font-size: 3rem;
+    }
+}

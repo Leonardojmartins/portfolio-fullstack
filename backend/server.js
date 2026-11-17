@@ -583,6 +583,58 @@ app.delete("/tarefas/:id", (req, res) => {
     );
 });
 
+/* ==========================================
+   4ª FUNCIONALIDADE - DASHBOARD DE INDICADORES
+========================================== */
+
+app.get("/dashboard", (req, res) => {
+
+    const sql = `
+        SELECT
+            (SELECT COUNT(*) FROM projetos)
+                AS total_projetos,
+
+            (SELECT COUNT(*) FROM projetos
+             WHERE status = 'Em desenvolvimento')
+                AS projetos_em_desenvolvimento,
+
+            (SELECT COUNT(*) FROM projetos
+             WHERE status = 'Concluído')
+                AS projetos_concluidos,
+
+            (SELECT COUNT(*) FROM tarefas)
+                AS total_tarefas,
+
+            (SELECT COUNT(*) FROM tarefas
+             WHERE status = 'Pendente')
+                AS tarefas_pendentes,
+
+            (SELECT COUNT(*) FROM tarefas
+             WHERE status = 'Em andamento')
+                AS tarefas_em_andamento,
+
+            (SELECT COUNT(*) FROM tarefas
+             WHERE status = 'Concluída')
+                AS tarefas_concluidas
+    `;
+
+    db.get(sql, [], (erro, indicadores) => {
+
+        if (erro) {
+            console.error(
+                "Erro ao consultar Dashboard:",
+                erro.message
+            );
+
+            return res.status(500).json({
+                erro: "Erro ao carregar indicadores."
+            });
+        }
+
+        return res.status(200).json(indicadores);
+    });
+});
+
 
 const PORT = 3000;
 
